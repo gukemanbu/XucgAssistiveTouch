@@ -42,7 +42,7 @@
 
 // 拖动事件
 - (void)handlePanGesture:(UIPanGestureRecognizer*)panGesture {
-    CGPoint panPoint = [panGesture locationInView:[[UIApplication sharedApplication] keyWindow]];
+    CGPoint panPoint = [panGesture locationInView:[UIApplication sharedApplication].windows[0]];
     if(panGesture.state == UIGestureRecognizerStateBegan) {
         [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(correctLocation) object:nil];
     } else if (panGesture.state == UIGestureRecognizerStateChanged) {
